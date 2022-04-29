@@ -1,0 +1,59 @@
+﻿<Window
+    x:Class="WinUI3_ExplorerBrowser.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinUI3_ExplorerBrowser"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--<StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center">
+        <Button x:Name="myButton"  HorizontalAlignment="Center"  Margin="10,460,10,0" Click="myButton_Click">Click Me</Button>
+        <Button x:Name="buttonCurrentItem" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10"
+                Click="buttonCurrentItem_Click">Get current item</Button>
+        --><!--<StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center">            
+            <Button x:Name="buttonCurrentItem" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10"
+                Click="buttonCurrentItem_Click">Get current item</Button>
+        </StackPanel>--><!--
+    </StackPanel>-->
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="480"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Height="40" VerticalAlignment="Center">
+                <Button x:Name="myButton" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 0, 0, 0" Click="myButton_Click">Click Me</Button>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Height="40" Width="850" VerticalAlignment="Bottom">
+            <TextBlock Margin="15, 0, 0, 10"  VerticalAlignment="Center" Text="Current folder" />
+            <Border Background="Black"  BorderThickness="2" BorderBrush="Gray" Margin="5, 0, 0, 10">
+                <TextBlock x:Name="tbItem" VerticalAlignment="Bottom" Margin="10, 0, 0, -6" Width="650" Height="30"
+                        Foreground="Lime" IsTextSelectionEnabled ="True">
+                </TextBlock>
+            </Border>          
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Height="40" VerticalAlignment="Center">
+            <Button x:Name="buttonCurrentItem" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5, 0, 0, 10" Click="buttonCurrentItem_Click">
+                    Get selected items
+            </Button>
+            <Border BorderThickness="2" BorderBrush="Silver" Margin="5, 0, 0, 10">
+                <ScrollViewer Height="30" Width="610" HorizontalScrollBarVisibility="Auto">
+                    <TextBlock Name="textBlockItems" Margin="10, 2, 0, -5" IsTextSelectionEnabled ="True" Text="" 
+                                Foreground="Yellow" />
+                </ScrollViewer>
+            </Border>
+        </StackPanel>
+        
+    </Grid>
+</Window>
